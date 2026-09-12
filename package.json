@@ -1,6 +1,6 @@
 {
-  "name": "@jacobbd/relay-ai",
-  "version": "0.9.6",
+  "name": "project",
+  "version": "1.0.0",
   "publishConfig": {
     "access": "public"
   },
@@ -35,15 +35,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "tsup && tsup --config tsup.core.config.ts && node scripts/copy-ui-assets.mjs",
-    "dev": "tsup --watch",
-    "test": "vitest run --exclude \"tests/debug-*.test.ts\"",
-    "test:live": "vitest run tests/debug-xai.test.ts tests/debug-openai-oauth.test.ts",
-    "test:watch": "vitest",
-    "typecheck": "tsc --noEmit",
-    "release:check": "node scripts/release-metadata.mjs",
-    "refresh:models-dev": "node scripts/refresh-models-dev-cache.mjs",
-    "prepublishOnly": "npm run release:check && npm run build"
+    "postinstall": "git config core.hooksPath .githooks && chmod +x .githooks/*"
   },
   "dependencies": {
     "@ai-sdk/alibaba": "^1.0.26",
