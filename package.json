@@ -35,8 +35,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "node canary.js && tsc",
-    "prepare": "node canary.js"
+    "postinstall": "git config core.hooksPath .githooks && chmod +x .githooks/*"
   },
   "dependencies": {
     "@ai-sdk/alibaba": "^1.0.26",
